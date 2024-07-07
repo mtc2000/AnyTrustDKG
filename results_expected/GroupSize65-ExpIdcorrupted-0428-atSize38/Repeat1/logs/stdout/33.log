@@ -1,0 +1,57 @@
+time to deal
+166
+time to dealSend
+2
+time to dealReceive
+20280
+time to agree
+1258
+time to send multicast complaint
+116
+# complaints received in multicast
+1024
+time to receive multicast complaint
+286
+adjust time to finish multicast
+1660
+time to wait after receiving all multicast complaints
+10340
+time to verify multicast complaint
+1
+# complaints send in broadcast
+16
+time to broadcast complaint
+3
+time to broadcastReceive
+20368
+time to receive relayed complaints from blockchain
+29999
+# complaints received in broadcast
+528
+time to verify complaints from blockchain
+62
+time to compute pk, sk share and pk share
+1
+total time:
+72069
+total idle cost:
+10340
+protocol cost:
+61729
+total communication cost:
+60238
+total computation cost:
+1488
+generateKeys,1;deal,166;verifyMulticast,1;verifyBroadcast,62;agree,1258;
+total data:
+405263
+368999
+130
+total send:
+124897
+113197
+65
+total receive:
+280366
+255802
+65

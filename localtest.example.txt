@@ -1,0 +1,50 @@
+8GB RAM recommended to accommodate network_size=16
+15GB RAM recommended to accommodate network_size=32
+For network_size > 32, we do not recommend running experiments via localtest.sh. Instead, it should be deployed on cloud among multiple instances
+
+current free memory:
+               total        used        free      shared  buff/cache   available
+Mem:            30Gi        18Gi       4.3Gi       4.1Gi       7.3Gi       7.0Gi
+Swap:           31Gi        29Mi        31Gi
+
+network_size: 16
+protocol: corrupted
+
+replica 00000 starts with PID: 541283
+replica 00001 starts with PID: 541286
+replica 00002 starts with PID: 541289
+replica 00003 starts with PID: 541292
+replica 00004 starts with PID: 541295
+replica 00005 starts with PID: 541298
+replica 00006 starts with PID: 541301
+replica 00007 starts with PID: 541304
+replica 00008 starts with PID: 541307
+replica 00009 starts with PID: 541310
+replica 00010 starts with PID: 541313
+replica 00011 starts with PID: 541316
+replica 00012 starts with PID: 541319
+replica 00013 starts with PID: 541322
+replica 00014 starts with PID: 541325
+replica 00015 starts with PID: 541328
+replica 00016 starts with PID: 541331
+last replica runs as the simulated blockchain node
+experiments are running... processes will automatically terminate in about 140 seconds...
+Process 541283 has terminated.
+Process 541286 has terminated.
+Process 541289 has terminated.
+Process 541292 has terminated.
+Process 541295 has terminated.
+Process 541298 has terminated.
+Process 541301 has terminated.
+Process 541304 has terminated.
+Process 541307 has terminated.
+Process 541310 has terminated.
+Process 541313 has terminated.
+Process 541316 has terminated.
+Process 541319 has terminated.
+Process 541322 has terminated.
+Process 541325 has terminated.
+Process 541328 has terminated.
+Process 541331 has terminated.
+All processes have terminated.
+Next, run `bash analysis.sh localtest_logs/` to see analysis of logs

@@ -1,0 +1,2 @@
+network_size: 32
+protocol: normal
