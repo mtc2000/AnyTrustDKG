@@ -3,6 +3,9 @@ name: Build and Release JARs
 on:
   workflow_dispatch
 
+permissions:
+  contents: write
+
 jobs:
   build:
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners
