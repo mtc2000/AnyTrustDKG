@@ -1,0 +1,46 @@
+name: Build and Release JARs
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+
+    - name: Download and install mpc4j
+      run: |
+        wget https://github.com/alibaba-edu/mpc4j/archive/refs/tags/v1.1.1.tar.gz
+        tar -xzf v1.1.1.tar.gz
+        cd mpc4j-1.1.1
+        mvn install
+
+    - name: Build atdkg project
+      run: |
+        cd atdkg
+        mvn clean package
+
+    - name: Upload JAR files
+      uses: actions/upload-artifact@v4
+      with:
+        name: atdkg-jars
+        path: atdkg/target/*.jar
+
+    - name: Release executables
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          atdkg/target/run.jar
+          atdkg/target/computationTest.jar
+          LICENSE
