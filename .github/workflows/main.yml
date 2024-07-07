@@ -39,6 +39,9 @@ jobs:
     - name: Release executables
       uses: softprops/action-gh-release@v2
       with:
+        name: CCS'24 AEC Review
+        tag_name: AEC
+        body: 'This version is for CCS AEC Review.' # Complete code and scripts are on Zenodo.
         files: |
           atdkg/target/run.jar
           atdkg/target/computationTest.jar
