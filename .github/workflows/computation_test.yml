@@ -1,4 +1,4 @@
-name: Build and Release JARs
+name: Build and run computation test
 
 on:
   workflow_dispatch
