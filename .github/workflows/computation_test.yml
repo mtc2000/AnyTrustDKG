@@ -36,7 +36,7 @@ jobs:
     - name: Run computation test
       run: |
         cd atdkg/target
-        java -jar computationtest.jar 9 15 2>&1 | tee computation_test.log
+        java -jar computationTest.jar 9 15 2>&1 | tee computation_test.log
 
     - name: Upload test log
       uses: actions/upload-artifact@v4
