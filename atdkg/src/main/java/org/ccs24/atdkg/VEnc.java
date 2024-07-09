@@ -45,7 +45,6 @@ public class VEnc {
 
         public List<byte[]> serialize() {
             return Arrays.asList(
-//                        this.c0.toByteArray(),
                         this.c.toByteArray(),
                         this.z.toByteArray(),
                         this.hPrime.getEncoded(compressEncoding)

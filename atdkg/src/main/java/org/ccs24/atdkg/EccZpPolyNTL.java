@@ -14,30 +14,15 @@ import java.security.SecureRandom;
  */
 public class EccZpPolyNTL implements ZpPoly {
 
-    /**
-
-     */
     protected final SecureRandom secureRandom;
-    /**
-
-     */
     protected final BigInteger p;
-    /**
-
-     */
     protected final int l;
 
     static {
         System.loadLibrary(CommonConstants.MPC4J_NATIVE_TOOL_NAME);
     }
 
-    /**
-
-     */
     private final byte[] pByteArray;
-    /**
-
-     */
     private final int pByteLength;
 
     public EccZpPolyNTL(BigInteger p) {
@@ -112,26 +97,7 @@ public class EccZpPolyNTL implements ZpPoly {
         return BigIntegerUtils.byteArraysToNonNegBigIntegers(polynomial);
     }
 
-    /**
-
-     *
-
-
-
-
-
-     */
     private static native byte[][] nativeRootInterpolate(byte[] primeBytes, int expectNum, byte[][] xArray, byte[] yBytes);
-
-    /**
-
-     *
-
-
-
-
-
-     */
     private static native byte[][] nativeInterpolate(byte[] primeBytes, int expectNum, byte[][] xArray, byte[][] yArray);
 
     @Override
@@ -151,8 +117,6 @@ public class EccZpPolyNTL implements ZpPoly {
         return BigIntegerUtils.byteArrayToNonNegBigInteger(yByteArray);
     }
 
-    /**
-     */
     private static native byte[] nativeSingleEvaluate(byte[] primeBytes, byte[][] coefficients, byte[] x);
 
     @Override
@@ -174,7 +138,5 @@ public class EccZpPolyNTL implements ZpPoly {
         return BigIntegerUtils.byteArraysToNonNegBigIntegers(yByteArrays);
     }
 
-    /**
-     */
     private static native byte[][] nativeEvaluate(byte[] primeBytes, byte[][] coefficients, byte[][] xArray);
 }

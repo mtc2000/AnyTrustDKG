@@ -29,8 +29,6 @@ class VEncComplaint {
     }
 
     public static VEncComplaint deserialize(List<byte[]> serializationList) {
-        // System.err.print("size of complaint: ");
-        // System.err.println(serializationList.stream().mapToInt(data -> data.length).sum());
         int plaintiffPartyId = IntUtils.byteArrayToInt(serializationList.get(0));
         int defendantPartyId = IntUtils.byteArrayToInt(serializationList.get(1));
         VEnc.VEncProof complaintProof = VEnc.VEncProof.deserialize(serializationList.subList(2, 5));

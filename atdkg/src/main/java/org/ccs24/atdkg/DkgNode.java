@@ -61,7 +61,6 @@ public class DkgNode {
                 .toArray(BigInteger[]::new);
 
 
-//        BigInteger[] randZpPoly = (treePoly)? zpTreePoly.evaluate(padTree(randZpPolyDegTCoeff)): zpPoly.evaluate(randZpPolyDegTCoeff, zeroToNArray);
         BigInteger[] randZpPoly = zpPoly.evaluate(randZpPolyDegTCoeff, zeroToNArray);
         ECPoint g = ecc.getG();
         ECPoint[] CMArray = Arrays.stream(randZpPoly).map(f -> ecc.multiply(g, f))

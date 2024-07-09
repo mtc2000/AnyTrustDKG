@@ -29,65 +29,33 @@ import java.util.stream.Collectors;
  */
 public class NettyTimeoutRpc implements Rpc {
     private static final Logger LOGGER = LoggerFactory.getLogger(NettyTimeoutRpc.class);
-    /**
 
-     */
     private final HashMap<Integer, NettyParty> partyIdHashMap;
-    /**
 
-     */
     private final NettyParty ownParty;
-    /**
-     * Own party's ID
-     */
+
     private final int ownPartyId;
-    /**
 
-     */
     private final DataPacketTimeoutBuffer dataPacketBuffer;
-    /**
 
-     */
     private final CyclicBarrier cyclicBarrier;
-    /**
 
-     */
     private DataReceiveThread dataReceiveThread;
-    /**
 
-     */
     private DataSendManager dataSendManager;
-    /**
 
-     */
     private long sendDataPacketNum;
-    /**
 
-     */
     private long sendPayloadByteLength;
-    /**
 
-     */
     private long sendByteLength;
 
-    /**
-
-     */
     private long receiveDataPacketNum;
-    /**
 
-     */
     private long receivePayloadByteLength;
-    /**
 
-     */
     private long receiveByteLength;
 
-    /**
-
-     *
-
-     */
     public NettyTimeoutRpc(NettyParty ownParty, Set<NettyParty> partySet) {
 
         Preconditions.checkArgument(partySet.size() > 1, "Party set size must be greater than 1");
