@@ -32,19 +32,19 @@ public class RunAll {
 
     public static final int DEFAULT_PORT = 10000;
 
-    public static Pair<String, Integer> ownPartyLocation; // TODO: init
+    public static Pair<String, Integer> ownPartyLocation;
     // include self & blockchain
     public static Pair<String, Integer> blockchainLocation;
 
     public static int ownPartyId;
     public static int blockchainPartyId;
 
-    public static UniversalNettyRpcManager rpcManager; // TODO: init
+    public static UniversalNettyRpcManager rpcManager;
 
 
     private static Integer GROUP_SIZE;
     private static Integer AT_SIZE;
-    // private static Integer HM_SIZE;
+
     private static Integer DEGREE_T;
     private static SecureRandom SECURE_RANDOM = new SecureRandom();
 
@@ -75,7 +75,6 @@ public class RunAll {
      */
     private static final PtoDesc PTO_DESC = RpcPto.getInstance();
 
-    //    public static VEnc[] VEncArray;
     public static List<ECPoint> VEncPublicKeys = new ArrayList<>();
 
     public static Map<Integer, VEnc> VEncMap = new HashMap<>();
@@ -112,30 +111,12 @@ public class RunAll {
     public static Map<Integer, Set<Integer>> disqualifiedMap;
     public static Map<Integer, Set<Integer>> qualifiedMap;
     public static Map<Integer, Map<Integer, VEncComplaint>> complaintMap;
-    // receiver id -> complaint[])
     public static Map<Integer, List<VEncComplaint>> receivedComplaintsMap;
     public static Map<Integer, VEncComplaint> uniqueComplaintMap;
     public static Map<Integer, VRF> VRFMap;
     public static Map<Integer, ECPoint> VRFPkMap;
     public static Map<Integer, Map<Integer, Candidate>> candidateMap;
 
-
-    public static void sortitionRate() {
-        int size = 32;
-        byte[] rand = new byte[size];
-        SECURE_RANDOM.nextBytes(rand);
-
-        VRF vrf;
-        VRF.VRFProof proof;
-        int counter = 0;
-        // cheat the sortition
-        for (int i = 0; i < GROUP_SIZE; i++) {
-            vrf = new VRF();
-            proof = vrf.sortition(rand, "deal".getBytes(), BigInteger.valueOf(AT_SIZE), BigInteger.valueOf(GROUP_SIZE));
-            if (null != proof) counter++;
-        }
-        System.out.println(counter);
-    }
 
     public static void initRpc() throws InterruptedException {
         NettyTimeoutRpc ownPartyRpc = rpcManager.getRpc(ownPartyId);
@@ -146,14 +127,6 @@ public class RunAll {
         ownPartyRpc.connect();
         ownPartyRpc.reset();
     }
-
-//    public static void closeRpc() throws InterruptedException {
-//        NettyTimeoutRpc ownPartyRpc = rpcManager.getRpc(ownPartyId);
-//        Thread.sleep(ownPartyId * 1000L);
-//        Thread thread = new Thread(ownPartyRpc::disconnect);
-//        thread.start();
-//        thread.join();
-//    }
 
     public static List<byte[]> deal(byte[] rand, int partyId) {
         return deal(rand, partyId, false);
@@ -237,8 +210,8 @@ public class RunAll {
                 cm0Proof // 2
         );
 
-//        System.err.print("size of deal: ");
-//        System.err.println(payload.stream().mapToInt(data -> data.length).sum());
+    //    System.err.print("size of deal: ");
+    //    System.err.println(payload.stream().mapToInt(data -> data.length).sum());
 
         return payload;
     }
@@ -417,24 +390,12 @@ public class RunAll {
         ECPoint[] CMArray;
         VRF.VRFProof vrfProof;
 
+        // unpack: see deal()
         byte[] partyIdEncoded = payload.get(0);
         List<byte[]> proofEncoded = payload.subList(1, 7);
         List<byte[]> CMArrayEncoded = payload.subList(7, 7 + GROUP_SIZE + 1);
         List<byte[]> CArrayEncoded = payload.subList(7 + GROUP_SIZE + 1, 7 + GROUP_SIZE + 1 + GROUP_SIZE + 1);
         List<byte[]> cm0Proof = payload.subList(7 + GROUP_SIZE + 1 + GROUP_SIZE + 1, 7 + GROUP_SIZE + 1 + GROUP_SIZE + 1 + 2);
-
-//        payload.add(// Convert int to byte array
-//                SerializationUtils.serialize(partyId) // 1
-//        );
-//        payload.addAll(
-//                proof.serialize() // 6
-//        );
-//        payload.addAll(
-//                CMArrayEncoded // GROUP_SIZE + 1
-//        );
-//        payload.addAll(
-//                CArrayEncoded // GROUP_SIZE + 1
-//        );
 
         try {
             CArray = CArrayEncoded
@@ -1005,7 +966,6 @@ public class RunAll {
         BigInteger result = BigInteger.ONE;
         for (BigInteger sk :
                 SKList) {
-            // TODO: check mod N
             result = result.multiply(sk).mod(ecc.getN());
         }
         return result;
@@ -1022,34 +982,14 @@ public class RunAll {
                 ecc::add).orElse(null);
     }
 
-
-    public static void cheat(int partyId, byte[] rand) {
-        VRF vrf = VRFMap.get(partyId);
-        VRF.VRFProof proof = vrf.sortition(rand, "deal".getBytes(), BigInteger.valueOf(AT_SIZE), BigInteger.valueOf(GROUP_SIZE));
-        int counter = 0;
-        // cheat the sortition
-        while (null == proof) {
-            counter++;
-            vrf = new VRF();
-            proof = vrf.sortition(rand, "deal".getBytes(), BigInteger.valueOf(AT_SIZE), BigInteger.valueOf(GROUP_SIZE));
-            if (null != proof) {
-                break;
-            }
-        }
-        if (verboseLog) System.out.println("cheating sortition!");
-        if (verboseLog) System.out.println(counter);
-        VRFMap.put(partyId, vrf);
-        VRFPkMap.put(partyId, vrf.getPublicKey());
-    }
-
     public static void main(String[] args) throws InterruptedException {
         if (args.length < 4) {
+            System.err.println("<index_id> <ip_file.txt> <anytrust_comittee_size> <experiment_prefix> [normal/corrupted]");
             return;
         }
 
         int index = Integer.parseInt(args[0]);
         String ipFilePath = args[1];
-        // AT_SIZE = Integer.parseInt(args[2]);
         byte[] experimentPrefix = args[3].getBytes();
 
         List<String> ipAddresses = new ArrayList<>();
@@ -1104,7 +1044,6 @@ public class RunAll {
             System.err.println("invalid at_size:" + args[2]);
         }
 
-        // HM_SIZE = Math.min(GROUP_SIZE / 2 + 1, 296);
         DEGREE_T = GROUP_SIZE / 2 + 1;
 
         if (ownPartyId == blockchainPartyId) mainBlockchain();
@@ -1133,15 +1072,10 @@ public class RunAll {
         StopWatch watch = new StopWatch();
         watch.start();
 
-//        int size = 32;
-//        byte[] rand = new byte[size];
-//        SECURE_RANDOM.nextBytes(rand);
-
         for (int i = 0; i < GROUP_SIZE; i++) {
-            // TODO: hardcoded sk for now
+            // hardcoded vrf sk for now
             VRFMap.put(i, new VRF(BigInteger.valueOf(i)));
             VRFPkMap.put(i, VRFMap.get(i).getPublicKey());
-//            System.out.println(Arrays.hashCode(VRFPkMap.get(i).getEncoded(true)));
             VEncMap.put(i, new VEnc(BigInteger.valueOf(i)));
             VEncPublicKeys.add(VEncMap.get(i).getPublicKey());
             VEncPublicKeyMap.put(i, VEncMap.get(i).getPublicKey());
