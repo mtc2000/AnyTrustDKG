@@ -1,0 +1,31 @@
+blockchain took # ms to receive the first packet dealBlockchainRelay
+267
+time to capture dealBlockchain
+20018
+time to send dealBlockchain
+220
+time to relay in blockchain
+20239
+time to sync with multicast + agree
+blockchain took # ms to receive the first packet broadcastBlockchainRelay
+20000
+time to capture broadcastBlockchainRelay
+20000
+time to send broadcastBlockchainRelay
+16
+time to relay broadcast complaints from blockchain
+20017
+total time:
+72001
+total data:
+12995235
+12233325
+170
+total send:
+12794684
+12045120
+128
+total receive:
+200551
+188205
+42
