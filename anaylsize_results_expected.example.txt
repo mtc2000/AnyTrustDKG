@@ -1,0 +1,107 @@
+Fig. 3: End-to-end Test Results (a) and the red line (bad) in (b) come from the analysis of the following raw logs
+results_expected/GroupSize17-ExpIdcorrupted-0428-atSize38
+results_expected/GroupSize33-ExpIdcorrupted-0428-atSize38
+results_expected/GroupSize65-ExpIdcorrupted-0428-atSize38
+results_expected/GroupSize129-ExpIdcorrupted-0428-atSize38
+results_expected/GroupSize257-ExpIdcorrupted-0428-atSize38
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdcorrupted-0428-atSize38
+
+configuration:
+network_size: 16
+protocol: corrupted
+
+worst adjusted_running_time and its breakdown by multicast_time and computation_time (in miliseconds)
+605,243,362
+(worst) of worst bandwidth usage data (in bytes)
+47520
+
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdcorrupted-0428-atSize38
+
+configuration:
+network_size: 32
+protocol: corrupted
+
+worst adjusted_running_time and its breakdown by multicast_time and computation_time (in miliseconds)
+1098,387,711
+(worst) of worst bandwidth usage data (in bytes)
+139020
+
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdcorrupted-0428-atSize38
+
+configuration:
+network_size: 64
+protocol: corrupted
+
+worst adjusted_running_time and its breakdown by multicast_time and computation_time (in miliseconds)
+2465,496,1969
+(worst) of worst bandwidth usage data (in bytes)
+545227
+
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdcorrupted-0428-atSize38
+
+configuration:
+network_size: 128
+protocol: corrupted
+
+worst adjusted_running_time and its breakdown by multicast_time and computation_time (in miliseconds)
+4615,1194,3421
+(worst) of worst bandwidth usage data (in bytes)
+1112669
+
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdcorrupted-0428-atSize38
+
+configuration:
+network_size: 256
+protocol: corrupted
+
+worst adjusted_running_time and its breakdown by multicast_time and computation_time (in miliseconds)
+8144,1534,6610
+(worst) of worst bandwidth usage data (in bytes)
+2288577
+
+The blue line (good) in Fig. 3: End-to-end Test Results (b) comes from the analysis of the following raw logs
+results_expected/GroupSize17-ExpIdnormal-0428-atSize38
+results_expected/GroupSize33-ExpIdnormal-0428-atSize38
+results_expected/GroupSize65-ExpIdnormal-0428-atSize38
+results_expected/GroupSize129-ExpIdnormal-0428-atSize38
+results_expected/GroupSize257-ExpIdnormal-0428-atSize38
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdnormal-0428-atSize38
+
+configuration:
+network_size: 16
+protocol: normal
+
+(worst) of worst bandwidth usage data (in bytes)
+19928
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdnormal-0428-atSize38
+
+configuration:
+network_size: 32
+protocol: normal
+
+(worst) of worst bandwidth usage data (in bytes)
+63398
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdnormal-0428-atSize38
+
+configuration:
+network_size: 64
+protocol: normal
+
+(worst) of worst bandwidth usage data (in bytes)
+204704
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdnormal-0428-atSize38
+
+configuration:
+network_size: 128
+protocol: normal
+
+(worst) of worst bandwidth usage data (in bytes)
+442083
+analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdnormal-0428-atSize38
+
+configuration:
+network_size: 256
+protocol: normal
+
+(worst) of worst bandwidth usage data (in bytes)
+995758
