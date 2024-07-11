@@ -13,7 +13,7 @@ protocol=corrupted
 
 echo "8GB RAM recommended to accommodate network_size=16"
 echo "15GB RAM recommended to accommodate network_size=32"
-echo "network_size > 32 is not recommended to run via localtest.sh, but among a distributed cluster"
+echo "For network_size > 32, we do not recommend running experiments via localtest.sh. Instead, it should be deployed on cloud among multiple instances"
 
 echo
 
@@ -22,15 +22,14 @@ free -hm
 
 echo
 
+log_dir=localtest_logs/Repeat01
+rm -rf localtest_logs
+mkdir -p $log_dir
 printf "network_size: $network_size\nprotocol: $protocol\n" | tee $log_dir/configuration.txt
 
 echo
 
 read -p "Press Enter to continue... Ctrl-C to abort..."
-
-log_dir=localtest_logs/Repeat01
-rm -rf localtest_logs
-mkdir -p $log_dir
 
 for replica in $(seq -f "%05g" 0 $(($size - 1)))
 do
