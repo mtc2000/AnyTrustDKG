@@ -70,4 +70,4 @@ while IFS= read -r pid || [[ -n "$pid" ]]; do
 done < $log_dir/pid.txt
 
 echo "All processes have terminated."
-echo "Next, run \`bash anaylsis.sh localtest_logs/\` to see analysis of logs"
+echo "Next, run \`bash analysis.sh localtest_logs/\` to see analysis of logs"

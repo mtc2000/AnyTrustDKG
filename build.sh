@@ -23,7 +23,7 @@ cd atdkg
 mvn clean package
 cd ..
 
-mv -t . atdkg/target/run.jar atdkg/target/computationTest.jar
+cp -t . atdkg/target/run.jar atdkg/target/computationTest.jar
 
 echo Build completed.
 echo

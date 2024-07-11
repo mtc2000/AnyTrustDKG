@@ -4,7 +4,7 @@ results_expected/GroupSize33-ExpIdcorrupted-0428-atSize38
 results_expected/GroupSize65-ExpIdcorrupted-0428-atSize38
 results_expected/GroupSize129-ExpIdcorrupted-0428-atSize38
 results_expected/GroupSize257-ExpIdcorrupted-0428-atSize38
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdcorrupted-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdcorrupted-0428-atSize38
 
 configuration:
 network_size: 16
@@ -15,7 +15,7 @@ worst adjusted_running_time and its breakdown by multicast_time and computation_
 (worst) of worst bandwidth usage data (in bytes)
 47520
 
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdcorrupted-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdcorrupted-0428-atSize38
 
 configuration:
 network_size: 32
@@ -26,7 +26,7 @@ worst adjusted_running_time and its breakdown by multicast_time and computation_
 (worst) of worst bandwidth usage data (in bytes)
 139020
 
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdcorrupted-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdcorrupted-0428-atSize38
 
 configuration:
 network_size: 64
@@ -37,7 +37,7 @@ worst adjusted_running_time and its breakdown by multicast_time and computation_
 (worst) of worst bandwidth usage data (in bytes)
 545227
 
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdcorrupted-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdcorrupted-0428-atSize38
 
 configuration:
 network_size: 128
@@ -48,7 +48,7 @@ worst adjusted_running_time and its breakdown by multicast_time and computation_
 (worst) of worst bandwidth usage data (in bytes)
 1112669
 
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdcorrupted-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdcorrupted-0428-atSize38
 
 configuration:
 network_size: 256
@@ -65,7 +65,7 @@ results_expected/GroupSize33-ExpIdnormal-0428-atSize38
 results_expected/GroupSize65-ExpIdnormal-0428-atSize38
 results_expected/GroupSize129-ExpIdnormal-0428-atSize38
 results_expected/GroupSize257-ExpIdnormal-0428-atSize38
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdnormal-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize17-ExpIdnormal-0428-atSize38
 
 configuration:
 network_size: 16
@@ -73,7 +73,7 @@ protocol: normal
 
 (worst) of worst bandwidth usage data (in bytes)
 19928
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdnormal-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize33-ExpIdnormal-0428-atSize38
 
 configuration:
 network_size: 32
@@ -81,7 +81,7 @@ protocol: normal
 
 (worst) of worst bandwidth usage data (in bytes)
 63398
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdnormal-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize65-ExpIdnormal-0428-atSize38
 
 configuration:
 network_size: 64
@@ -89,7 +89,7 @@ protocol: normal
 
 (worst) of worst bandwidth usage data (in bytes)
 204704
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdnormal-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize129-ExpIdnormal-0428-atSize38
 
 configuration:
 network_size: 128
@@ -97,7 +97,7 @@ protocol: normal
 
 (worst) of worst bandwidth usage data (in bytes)
 442083
-analysizing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdnormal-0428-atSize38
+analyzing this folder: (!!!omitted_absolute_user_path!!!)/results_expected/GroupSize257-ExpIdnormal-0428-atSize38
 
 configuration:
 network_size: 256

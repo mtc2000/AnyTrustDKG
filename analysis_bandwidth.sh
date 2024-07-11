@@ -8,7 +8,7 @@ if [ ! -d "$experiment_folder" ]; then
    exit 1
 fi
 
-echo analysizing this folder: $experiment_folder
+echo analyzing this folder: $experiment_folder
 cd $experiment_folder
 
 echo
