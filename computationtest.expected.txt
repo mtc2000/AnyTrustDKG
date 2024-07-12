@@ -1,0 +1,41 @@
+usage: <program> <start> <end>. start=9, end=15 on default
+Apr 28, 2024 12:35:41 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^8=====
+deal end
+Apr 28, 2024 12:35:45 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^8: DEAL (307ms); GoodVerify (1665 ms); GoodTotal (1972ms); BadVerify (1457ms); BadTotal (1764 ms)
+Apr 28, 2024 12:35:45 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^9=====
+deal end
+Apr 28, 2024 12:35:50 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^9: DEAL (212ms); GoodVerify (2346 ms); GoodTotal (2558ms); BadVerify (2528ms); BadTotal (2740 ms)
+Apr 28, 2024 12:35:50 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^10=====
+deal end
+Apr 28, 2024 12:36:00 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^10: DEAL (466ms); GoodVerify (4493 ms); GoodTotal (4959ms); BadVerify (5108ms); BadTotal (5574 ms)
+Apr 28, 2024 12:36:00 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^11=====
+deal end
+Apr 28, 2024 12:36:21 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^11: DEAL (938ms); GoodVerify (9639 ms); GoodTotal (10577ms); BadVerify (10595ms); BadTotal (11533 ms)
+Apr 28, 2024 12:36:21 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^12=====
+deal end
+Apr 28, 2024 12:37:09 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^12: DEAL (2696ms); GoodVerify (21497 ms); GoodTotal (24193ms); BadVerify (23328ms); BadTotal (26024 ms)
+Apr 28, 2024 12:37:09 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^13=====
+deal end
+Apr 28, 2024 12:39:06 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^13: DEAL (8915ms); GoodVerify (51845 ms); GoodTotal (60760ms); BadVerify (55674ms); BadTotal (64589 ms)
+Apr 28, 2024 12:39:06 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^14=====
+deal end
+Apr 28, 2024 12:44:28 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^14: DEAL (32250ms); GoodVerify (141327 ms); GoodTotal (173577ms); BadVerify (148557ms); BadTotal (180807 ms)
+Apr 28, 2024 12:44:28 PM au.edu.sydney.DkgNoteTest all
+INFO: ===Test start===; Nodes: 2^15=====
+deal end
+Apr 28, 2024 1:01:18 PM au.edu.sydney.DkgNoteTest all
+INFO: ===END=== 2^15: DEAL (123003ms); GoodVerify (431915 ms); GoodTotal (554918ms); BadVerify (453463ms); BadTotal (576466 ms)
