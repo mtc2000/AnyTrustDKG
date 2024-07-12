@@ -1,0 +1,23 @@
+{
+    "NetworkInterfaces": [
+      {
+        "SubnetId": "subnet-replacethisbyyourownsubnetid",
+        "AssociatePublicIpAddress": false,
+        "DeviceIndex": 0,
+        "Groups": [
+          "sg-replacethisbyyourownsgid"
+        ]
+      }
+    ],
+    "InstanceType": "t3a.medium",
+    "Monitoring": {
+        "Enabled": true
+    },
+    "IamInstanceProfile": {
+        "Arn": "arn:aws:iam::ReplaceThisIAMByARoleThatAllowsEC2AndS3AccessRole"
+    },
+    "InstanceInitiatedShutdownBehavior": "terminate",
+    "MetadataOptions": {
+        "InstanceMetadataTags": "enabled"
+    }
+}

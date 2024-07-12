@@ -47,7 +47,8 @@ public class DkgNoteTest {
 
     private void all(int logN) {
         int GROUP_SIZE = 1 << logN;
-        int AT_SIZE = Math.min(GROUP_SIZE / 2 + 1, 29);
+        int AT_SIZE = Math.min(GROUP_SIZE / 2 + 1, 38);
+        // LOGGER.info("===Any-Trust comittee size===" + AT_SIZE + "=====");
         LOGGER.info("===Test start===" + "; Nodes: 2^" + logN + "=====");
         EccFactory.EccType eccType = EccFactory.EccType.SEC_P256_K1_BC;
         Ecc ecc = EccFactory.createInstance(eccType);
