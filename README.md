@@ -312,18 +312,14 @@ The output of the analysis was used to generate the following figures:
 
 **To facilitate AEC review, we summarize the materials and instructions related to the three badges as follows:**
 
-### 1. Artifacts Available
-This artifacts will be put into Zenodo and public in Github. 
+- Artifacts Available:
+This repository includes the source code the software, the raw experiment data and various scripts to analyze the data and to facilitate experiment execution.
+All data is available on Zenodo and public in GitHub. See previous section [**Obtain the Artifact**](#obtain-the-artifact).
 
-### 2. Artifacts Evaluated
-We have include a demo to show how to use GEAD at **[here](demo/demo.ipynb)**, which could help you to understand how to use and the workflow of GEAD.
-In order to facilitate understanding of the GEAD code and verify its integrity, we briefly explain the relevant code in `code/gead.py` (the same applies to `gead_seq.py`) according to the GEAD process as introduced in "**Introduction**": 
-- **Root regression tree generation**: see `get_roottree()` function on line 112 of `code/gead.py`
-- **Low-confidence Region Identification**: also in `get_roottree()` function on line 112 of `code/gead.py`
-- **Low-confidence augmentation**: see `lc_data_augment()` function on line 140 of `code/gead.py`
-- **Low-confidence rule generation**: see `get_lc_trees()` function on line 386 of `code/gead.py`
-- **Tree merging and discretization**: see `get_merged_tree()` function on line 717 of `code/gead.py`
-- **Rule generation (optional)**: we leave this to specific applications since this step is optional (as stated in our paper)
+- Artifacts Evaluated - Functional: Instructions in this document are expected to lead to successful build and execution of the software `run.jar` and `computationTest.jar`.
+- Artifacts Evaluated - Reusable: The code base in this artifact can be reused and repurposed, where the key components are listed in the [**introduction**](#introduction). The provided AWS testing framework may be of independent interest and be reused for any distributed experiements on AWS regardless of software dependencies.
 
-### 3. Results Reproduced
-Please see the above section in this README ("**Experiment Results**") and specific notes in the jupyter notebook files.
+- Results Reproduced:
+Following the instructions in [**Run Local Computation Test**](#run-local-computation-test-heavier-computation-1020-compute-minutes-4-gb-ram), the computational results in our paper can be generated independently within an allowed tolerance.
+Following the instructions in [**Run Local End-to-end Test**](#run-local-end-to-end-test-3-compute-minutes-per-experiment-configuration-500-mb-ram-per-node), the end-to-end experiment results can be generated with some tolerance in a local environment.
+Since we will not provide AWS EC2 access to reviewers, the end-to-end experiment on cloud cannot be very easily obtained, though we have provided instructions in [**Run Cloud-based End-to-end Test**](#run-cloud-based-end-to-end-test-05-1-human-hours-to-configure-7-compute-minutes-per-node-per-repeat-per-experiment-configuration-4-gb-ram-per-ec2-node).
