@@ -24,7 +24,7 @@ This artifact, a copy of this repository, can be accessed via the following link
 
 - Java 17. Recommend installing use [sdkman](https://sdkman.io/install).
 - Maven 3. Recommend installing use [sdkman](https://sdkman.io/install).
-- [GNU datamash](https://www.gnu.org/software/datamash/download/), allowing easy arithmetic on experiment log statistics.
+- [GNU data mash](https://www.gnu.org/software/datamash/download/), allowing easy arithmetic on experiment log statistics.
 - Key library used: [mpc4j-v1.1.1](https://github.com/alibaba-edu/mpc4j/releases/tag/v1.1.1)
 
 This implementation has been successfully tested on
@@ -119,7 +119,7 @@ Note: the original experiments were conducted on **MULTIPLE** AWS EC2 `t3a.mediu
 Each instance has 2 vCPUs and 4 GB RAM and runs in Amazon Linux 2023 AMI 2023.4.20240416.0 x86_64 HVM kernel-6.1 image.
 Difference is expected when the testing environment varies.
 
-Due to the limit of budget, we will not provide AWS access to AEC reviewers. Instead, we provide (1) instructions to simulate end-to-end experiments on a (multi-core) local machine, (2) analysis of the raw logs in [later section](#analyze-raw-logs-05-compute-minutes), and (3) a copy of our testing framework on AWS in [later section](#run-cloud-based-end-to-end-test-1-2-human-hours-3-5-compute-minutes-per-node-per-repeat-per-experiment-configuration-4-gb-ram-per-ec2-node).
+Due to the limit of budget, we will not provide AWS access to AEC reviewers. Instead, we provide (1) instructions to simulate end-to-end experiments on a (multicore) local machine, (2) analysis of the raw logs in [later section](#analyze-raw-logs-05-compute-minutes), and (3) a copy of our testing framework on AWS in [later section](#run-cloud-based-end-to-end-test-1-2-human-hours-3-5-compute-minutes-per-node-per-repeat-per-experiment-configuration-4-gb-ram-per-ec2-node).
 
 In E2E local simulation, multiple local nodes (processes) are spawn to simulate multiple AWS EC2 instances in our original experiments and each local node may consume about 500 MB RAM. Nevertheless, we acknowledge and emphasize that the local E2E experiment are not equivalent to our original cloud experiments, and results may vary due to differences in:
 - hardware specification;
@@ -234,21 +234,21 @@ The output of this experiment may validate the following claims:
 
 ### Run Cloud-based End-to-end Test (0.5-1 human-hours to configure; ~7 compute-minutes per node per repeat per experiment configuration; 4 GB RAM per EC2 node)
 
-We first estimate the total cost of repeating all our experiments.
+We regard this section as an optional since the AWS setup itself is more complicated, expensive, time-consuming, and it requires an intermediate level of knowledge in AWS services. We make the technical details of our attempt public, in case it may benefit the larger community.
+
+First, we estimate the total cost of repeating all our experiments.
 The total `t3a.medium` computation time can be estimated by 7 x 8 (repeats) x (16 + 32 + 64 + 128 + 256) x 2 ~= 56000 minutes.
 Assume the On-Demand hourly cost is `0.0376` USD, the total cost of running all 8 repeats and 10 different configurations will cost roughly 35 USD. Data transfer among EC2 instances within the same region is free of charge. However, S3 may generate extra cost since logs are uploaded to and downloaded from S3.
 
-Repeats cannot be parallelized, but configurations can be. Therefore, the parallel computation needs 7 x (repeats) 8 = 56 human-minutes to complete.
-Though it would need 1000 `t3a.medium` EC2 instances to be run in `us-east-1` region.
+If the 10 different configurations (5 scales x 2 protocols (normal/corrupted)) are executed sequentially with each configuration repeating 8 times, the real time to complete all experiments is 10 x 8 x 7 / 60 = 9.3 hours. However, despite repeats cannot be parallelized by our script, configurations can be. Therefore, the minimal parallel computation time can be achieved when all 10 configurations are run in parallel. This realizes a 10x speedup, and 7 x (repeats) 8 = 56 compute-minutes are needed. As a prerequisite, one needs to make sure the EC2 quota limit `us-east-1` region is sufficient (greater than 2000 vCPU cores). The helper script [`setLimit.sh`](aws_test_framework/ec2-provision/preparation/setLimit.sh) may be helpful to increase the quota limit.
 
-Due to the differences in different cloud computing providers, we will NOT provide an out-of-box directly-runnable setup in this section. Instead, we explain how we organize our experiments on AWS, and provide a public version of our testing framework.
+Nevertheless, we highlight the risk of running too many configurations or instances in parallel. When some instances have an unexpected delay after provisioning for unknown reason, it might be more difficult to identify the abnormal pending instances among too many parallel configurations. One should consult the helper script in [`aws_test_framework/ec2-provision/miscs/`](aws_test_framework/ec2-provision/miscs/) if they decide to run most configurations in parallel.
 
-We attach the testing framework in (TODO)[], which can be of independent interests and uses. Nevertheless, we emphasize that credential information has been retracted in these scripts, and they cannot be used out-of-box. The retracted variables are often prefixed by value `replace` and are listed here:
+Due to the differences in different cloud computing providers, we will NOT provide an out-of-box setup in this section. Instead, we explain how we organize our experiments on AWS, and provide a public version of our testing framework.
 
-```{plain}
-TODO
-```
+We attach the testing framework with documentation in the folder [`aws_test_framework`](aws_test_framework). Note that the provided framework can be reused for any distributed experiments on AWS regardless of software dependencies, therefore it can be of independent interests and uses.
 
+Please refer to the README file at [`aws_test_framework/README.md`](aws_test_framework/README.md) for more details.
 
 ### Run Local Computation Test (Heavier computation; 10~20 compute-minutes; 4 GB RAM)
 
@@ -295,7 +295,7 @@ java \
 
 ### Analyze raw logs (0.5 compute-minutes)
 
-To recompute all the numberic results shown in Figure 3 (a) and (b), run the following to analyze raw logs.
+To recompute all the numeric results shown in Figure 3 (a) and (b), run the following to analyze raw logs.
 
 ```{bash}
 bash analyze_results_expected.sh
@@ -317,7 +317,7 @@ This repository includes the source code the software, the raw experiment data a
 All data is available on Zenodo and public in GitHub. See previous section [**Obtain the Artifact**](#obtain-the-artifact).
 
 - Artifacts Evaluated - Functional: Instructions in this document are expected to lead to successful build and execution of the software `run.jar` and `computationTest.jar`.
-- Artifacts Evaluated - Reusable: The code base in this artifact can be reused and repurposed, where the key components are listed in the [**introduction**](#introduction). The provided AWS testing framework may be of independent interest and be reused for any distributed experiements on AWS regardless of software dependencies.
+- Artifacts Evaluated - Reusable: The code base in this artifact can be reused and repurposed, where the key components are listed in the [**introduction**](#introduction). The provided AWS testing framework may be of independent interest and be reused for any distributed experiments on AWS regardless of software dependencies.
 
 - Results Reproduced:
 Following the instructions in [**Run Local Computation Test**](#run-local-computation-test-heavier-computation-1020-compute-minutes-4-gb-ram), the computational results in our paper can be generated independently within an allowed tolerance.

@@ -8,4 +8,4 @@ Scripts within the [`OnS3`](OnS3/) folder eventually will be loaded to each EC2 
     - `OnS3/ready.sh` to upload its own IP address to S3 indicating it is ready, and wait indefinitely until all $N$ instances have indicated their availability;
     - `OnS3/experiment.sh` to execute the Any-Trust protocol, wait until termination, and upload execution logs to S3.
 - `OnS3/artifacts/log4j.properties` is an auxiliary log4j configuration file.
-- `OnS3/artifacts/run.jar` should be pre-compiled following [guide](TODO) and copied to this file path.
+- `OnS3/artifacts/run.jar` should be pre-compiled following the instructions in [Build From Source Code](../README.md#build-from-source-code-3-compute-minutes) or download it from the GitHub release. Copy `run.jar` to this file path.
