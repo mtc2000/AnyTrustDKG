@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/828109644.svg)](https://zenodo.org/doi/10.5281/zenodo.12736462)
+
 > *Scalable and Adaptively Secure Any-Trust Distributed Key Generation and All-hands Checkpointing* Accepted by [CCS'24](https://www.sigsac.org/ccs/CCS2024).
 
 ## Introduction
@@ -5,7 +7,7 @@
 This document is the instruction for the [CCS'24](https://www.sigsac.org/ccs/CCS2024) artifact evaluation for paper *Scalable and Adaptively Secure Any-Trust Distributed Key Generation and All-hands Checkpointing*.
 The paper delivers a new Distributed Key Generation (DKG) protocol, namely Any-Trust DKG. In short, Any-Trust DKG delegates the most costly operations to an Any-Trust group together with a set of techniques for adaptive security. The Any-Trust group is randomly sampled and consists of a small number of individuals. The population only trusts that at least one member in the group is honest, without knowing which one.
 
-This document belongs to the artifact, which is available online at [Zenodo](TODO) and [GitHub](TODO). The accepted version of the CCS paper can also be found within this repository ([ccs2024b-paper583.accepted-version.pdf](ccs2024b-paper583.accepted-version.pdf)).
+This document belongs to the artifact, which is available online at [Zenodo](https://zenodo.org/doi/10.5281/zenodo.12736462) and [GitHub](https://github.com/mtc2000/AnyTrustDKG-ArtifactEvaluation). The accepted version of the CCS paper can also be found within this repository ([ccs2024b-paper583.accepted-version.pdf](ccs2024b-paper583.accepted-version.pdf)).
 
 This artifact contains the proof-of-concept implementation and experiment results of Any-Trust DKG proposed in the paper.
 
@@ -16,7 +18,7 @@ Core components are as follows:
 
 ## Obtain the Artifact
 
-This artifact, a copy of this repository, can be accessed via the following links: [Zenodo](TODO) and [GitHub](TODO).
+This artifact, a copy of this repository, can be accessed via the following links: [Zenodo](https://zenodo.org/doi/10.5281/zenodo.12736462) and [GitHub](https://github.com/mtc2000/AnyTrustDKG-ArtifactEvaluation).
 
 ## Artifact Overview
 
