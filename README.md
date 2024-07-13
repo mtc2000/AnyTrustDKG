@@ -146,7 +146,7 @@ To run local E2E experiment, one needs to ensure `run.jar` is correctly placed a
 bash localtest.sh
 ```
 
-One can download the `run.jar` in [the release](https://github.com/mtc2000/AnyTrustDKG/releases/tag/AEC) or [manually build `run.jar` from source code](#build-from-source-code-3-compute-minutes). 
+One can download the `run.jar` in [the release](https://github.com/mtc2000/AnyTrustDKG-ArtifactEvaluation/releases/tag/AEC) or [manually build `run.jar` from source code](#build-from-source-code-3-compute-minutes). 
 
 
 It will prompt the configuration of the experiment and ask you to hit `Enter` to proceed. For example,
@@ -257,7 +257,7 @@ Please refer to the README file at [`aws_test_framework/README.md`](aws_test_fra
 
 Note: the original experiments were conducted on an AWS EC2 `c5a.large` instance, which equips AMD EYPC 7002 CPU with 2 cores and 4 GB RAM. Difference is expected when the testing environment varies.
 
-One can download the `computationTest.jar` in [the release](https://github.com/mtc2000/AnyTrustDKG/releases/tag/AEC) or [manually build `computationTest.jar` from source code](#build-from-source-code-3-compute-minutes). 
+One can download the `computationTest.jar` in [the release](https://github.com/mtc2000/AnyTrustDKG-ArtifactEvaluation/releases/tag/AEC) or [manually build `computationTest.jar` from source code](#build-from-source-code-3-compute-minutes). 
 
 When the `computationTest.jar` is correctly placed in the current directory, run the following to start the local computation test for group sizes ranging from $2^{9}$ to $2^{15}$.
 
