@@ -40,8 +40,8 @@ The following is a brief introduction to the directory structure of this artifac
 
 ```{plain}
 .
-├── atdkg                                           ; source code
-│   ├── pom.xml                                     ; dependencies and build configurations
+├── atdkg                                           ; source code.
+│   ├── pom.xml                                     ; dependencies and build configurations.
 │   ├── src
 │   │   ├── main
 │   │   │   ├── java
@@ -54,6 +54,7 @@ The following is a brief introduction to the directory structure of this artifac
 │   │   │   └── resources
 │   │   └── test                                    ; small functional tests.
 │   └── target                                      ; artifacts will be built here and copied to the top level.
+├── aws_test_framework                              ; an optional testing helper framework, check its own README.
 ├── .github
 │   └── workflows
 │       ├── computation_test.yml                    ; GitHub Action to build `computationTest.jar` and run it using GitHub Action instances.
